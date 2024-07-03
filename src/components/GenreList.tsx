@@ -43,6 +43,8 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
               onClick={() => onSelectGenre(genre)}
               fontSize="lg"
               variant="link"
+              textAlign="left"
+              whiteSpace="normal"
               color={genre.id === selectedGenre?.id ? "blue.500" : ""}
             >
               {genre.name}
