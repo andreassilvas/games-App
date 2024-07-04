@@ -6,7 +6,6 @@ import {
   List,
   ListItem,
   Spinner,
-  Text,
 } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenres";
 import getCroppedImagesUrl from "../servives/image-url";
@@ -31,7 +30,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
 
   return (
     <>
-      <Heading fontSize="2xl" marginBottom={4} color="green.100">
+      <Heading fontSize="2xl" marginBottom={4} color="green.400">
         Genres
       </Heading>
       <List>
