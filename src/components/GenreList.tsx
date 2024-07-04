@@ -20,16 +20,15 @@ const GenreList = ({ selectedGenre, onSelectGenre }: GenreListProps) => {
   const { data, isLoading, error } = useGenres();
 
   if (error) return null;
-  if (isLoading)
-    return (
-      <Spinner
-        thickness="4px"
-        speed="0.65s"
-        emptyColor="gray.200"
-        color="blue.500"
-        size="xl"
-      ></Spinner>
-    );
+  if (isLoading) return;
+  <Spinner
+    thickness="4px"
+    speed="0.65s"
+    emptyColor="gray.200"
+    color="blue.500"
+    size="xl"
+  ></Spinner>;
+
   return (
     <>
       <Heading fontSize="2xl" marginBottom={4} color="green.100">
