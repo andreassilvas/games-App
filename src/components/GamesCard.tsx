@@ -10,7 +10,7 @@ interface GamesCardProps {
 }
 const GamesCard = ({ game }: GamesCardProps) => {
   return (
-    <Card>
+    <Card marginBottom={4}>
       <Image src={getCroppedImagesUrl(game.background_image)}></Image>
       <CardBody>
         <HStack justifyContent="space-between" marginBottom={3}>
