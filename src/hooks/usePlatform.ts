@@ -3,7 +3,7 @@ import { FetchRespose } from "../services/api-client";
 import platforms from "../data/platforms";
 import apiClient from "../services/api-client";
 
-interface Platform {
+export interface Platform {
     id: number;
     name: string;
     slug: string;
