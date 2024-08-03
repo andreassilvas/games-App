@@ -18,11 +18,13 @@ const useGames = (gameQuery: GameQuery) => useInfiniteQuery<FetchRespose<Game>, 
     queryKey: ['games', gameQuery],
     queryFn: ({ pageParam = 1 }) => apiClient.getData({
         params: {
-            genres: gameQuery.genre?.id,
-            parent_platforms: gameQuery.platform?.id,
+            genres: gameQuery.genreId,
+            genreName: gameQuery.genreName,
+            parent_platforms: gameQuery.platformId,
+            platformName: gameQuery.platformName,
+            page: pageParam,
             ordering: gameQuery.sortOrder,
             search: gameQuery.searchText,
-            page: pageParam
         }
     }),
     staleTime: 24 * 60 * 60 * 1000,
