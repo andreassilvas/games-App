@@ -1,5 +1,6 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { GameQuery } from './../App';
+import msLib from "ms";
 import APIClient, { FetchRespose } from '../services/api-client';
 import { Platform } from './usePlatforms';
 
@@ -27,7 +28,7 @@ const useGames = (gameQuery: GameQuery) => useInfiniteQuery<FetchRespose<Game>, 
             search: gameQuery.searchText,
         }
     }),
-    staleTime: 24 * 60 * 60 * 1000,
+    staleTime: msLib('24h'),
     getNextPageParam: (lastPage, allPages) => {
         return lastPage.next ? allPages.length + 1 : undefined
     }
