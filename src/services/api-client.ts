@@ -21,7 +21,15 @@ class APIClient<T> {
     }
 
     getData = (config: AxiosRequestConfig) => {
-        return axiosInstance.get<FetchRespose<T>>(this.endpoint, config).then(resp => resp.data)
+        return axiosInstance
+            .get<FetchRespose<T>>(this.endpoint, config)
+            .then(resp => resp.data)
+    }
+
+    get = (id: number | string) => {
+        return axiosInstance
+            .get<T>(this.endpoint + '/' + id)
+            .then(resp => resp.data)
     }
 }
 

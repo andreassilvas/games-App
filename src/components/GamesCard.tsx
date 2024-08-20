@@ -1,9 +1,19 @@
-import { Card, CardBody, HStack, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Card,
+  CardBody,
+  HStack,
+  Heading,
+  Image,
+  ScaleFade,
+  Text,
+} from "@chakra-ui/react";
 import { Game } from "../hooks/useGames";
 import PlatformIconnList from "./PlatformIconnList";
 import CriticScore from "./CriticScore";
 import getCroppedImagesUrl from "../services/image-url";
 import Emoji from "./Emoji";
+import { Link } from "react-router-dom";
 
 interface GamesCardProps {
   game: Game;
@@ -22,7 +32,7 @@ const GamesCard = ({ game }: GamesCardProps) => {
           <CriticScore score={game.metacritic}></CriticScore>
         </HStack>
         <Heading fontSize={"xl"}>
-          {game.name}
+          <Link to={`/games/${game.slug}`}>{game.name}</Link>
           <Emoji rating={game.rating_top}></Emoji>
         </Heading>
       </CardBody>
